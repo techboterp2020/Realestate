@@ -1,0 +1,80 @@
+<!-- <?xml version="1.0" encoding="utf-8" ?> -->
+<odoo>
+<data>
+
+
+
+    <record id="project_realestate_view_tree" model="ir.ui.view">
+            <field name="name">Project</field>
+            <field name="model">realestate.project</field>
+            <field name="arch" type="xml">
+                <tree string="Project" >
+                    <field name="name"/>
+                    <field name="name_project"/>
+                    <field name="number_units"/>
+                    <field name="resp_empl"/>
+                    <field name="unit_ids" />
+                </tree>
+            </field>
+    </record>
+
+    <record id="project_realestate_view_form" model="ir.ui.view">
+            <field name="name">Project</field>
+            <field name="model">realestate.project</field>
+            <field name="arch" type="xml">
+                <form string="Project">
+                    <!-- <header>
+                        <button name="send_project" string="Send Project" type="object"/>
+                    </header> -->
+                    <sheet>
+                        <div class="oe_title">
+                        <h1>
+                          <div class="oe_inline oe_edit_only">
+                                 <label for="name"/>
+                                 <field name="name" required="1"/>
+                                
+                          </div>
+                        </h1>
+                        <h3>
+                          <div class="oe_inline oe_edit_only">
+                                 <label for="name_project"/>
+                                 <field name="name_project" required="1"/>
+                          </div>
+                        </h3>
+                    </div>   
+                    <group>
+                        
+                        <group>
+                            <field name="number_units" />
+                            <field name="resp_empl"/>
+                        </group>
+
+                        
+                    </group>
+                    <notebook>
+                        <page string="Units" name="Units">
+                             <field name="unit_ids" nolabel="1"
+                                 context="{'default_project_id': active_id }">   
+                                 <tree  editable="bottom">
+                                    <control>
+                                        <create name="add_product_control" string="Add a product"/>
+                                    </control>
+                                    <field name="project_id" invisible="1"/>
+                                    <field name="product_id" />
+                                    <field name="name" />
+                                    <!-- <field name="view" widget="many2many_tags" readonly="0"/> -->
+                                    <!-- <field name="name_project" /> -->
+                                    <field name="type_unit"  />
+                                    <field name="state_unit" />
+                                 </tree>         
+                             </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+                </form>
+            </field>
+    </record>
+
+</data>
+</odoo>
