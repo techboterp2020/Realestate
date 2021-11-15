@@ -1,0 +1,16 @@
+<!-- <?xml version="1.0" encoding="utf-8" ?> -->
+<odoo>
+<data>
+
+    <record id="state_unit_view_tree" model="ir.ui.view">
+            <field name="name">state.unit.tree</field>
+            <field name="model">realestate.state</field>
+            <field name="arch" type="xml">
+                <tree string="Unit State" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+    </record>
+
+</data>
+</odoo>
